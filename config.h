@@ -61,6 +61,11 @@ static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", 
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL};
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL};
 
+/* Shortcut programs */
+static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/TheBible.pdf", NULL};
+static const char *firefox[] = { "/usr/bin/firefox", NULL};
+static const char *screenChange[] = { "screenChangeTP.sh", NULL};
+static const char *knowledgeSearch[] = { "knowledgeSearch.sh", NULL};
 
 /* for volume keys */
 # include <X11/XF86keysym.h>
@@ -85,7 +90,12 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_z,      spawn,          {.v = bibleLaunch } },
+	{ MODKEY,                       XK_g,      spawn,          {.v = firefox } },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = screenChange } },
+	{ MODKEY,                       XK_n,      spawn,          {.v = knowledgeSearch } },
+	
+  { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
