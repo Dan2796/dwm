@@ -66,6 +66,7 @@ static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/TheBible.pdf", NULL}
 static const char *firefox[] = { "/usr/bin/firefox", NULL};
 static const char *screenChange[] = { "screenChangeTP.sh", NULL};
 static const char *knowledgeSearch[] = { "knowledgeSearch.sh", NULL};
+static const char *fullPdfSearch[] = { "fullPdfSearch.sh", NULL};
 static const char *emailOpen[] = { "st", "neomutt", NULL};
 static const char *emailSync[] = { "st", "mbsync outlook oxford personalmail", NULL};
 
@@ -96,6 +97,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_g,      spawn,          {.v = firefox } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = screenChange } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = knowledgeSearch } },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = fullPdfSearch } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = emailOpen } },
 	{ MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailSync } },
 	
