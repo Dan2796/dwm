@@ -35,6 +35,7 @@ static const Rule rules[] = {
   /* class      instance    title       tags mask     isfloating   canfocus isterminal noswallow monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           1,       0,         0,        -1 },
 	{ "firefox",  NULL,       NULL,       0,            0,           1,       0,         0,        -1 },
+	{ "qutebrowser",  NULL,       NULL,       0,            0,           1,       0,         0,        -1 },
 	{ "st",       NULL,       NULL,       0,            0,           1,       1,         1,        -1 },
 	{ "guvcview", NULL,       NULL,       0,            0,           1,       0,         0,        -1 },
 };
@@ -66,12 +67,15 @@ static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle
 
 /* Shortcut programs */
 static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/TheBible.pdf", NULL};
-static const char *firefox[] = { "/usr/bin/firefox", NULL};
+static const char *qute[] = { "/usr/bin/qutebrowser", NULL};
 static const char *screenChange[] = { "screenChangeTP.sh", NULL};
 static const char *knowledgeSearch[] = { "knowledgeSearch.sh", NULL};
 static const char *fullPdfSearch[] = { "fullPdfSearch.sh", NULL};
 static const char *emailOpen[] = { "st", "neomutt", NULL};
-static const char *emailSync[] = { "st", "mbsync outlook oxford personalmail", NULL};
+static const char *emailSync[] = { "st", "mbsync -a", NULL};
+static const char *emailNotMuch[] = { "st", "notmuch new", NULL};
+static const char *passMaster[] = { "/usr/bin/passmenu", NULL};
+static const char *calOpen[] = { "st", "calcurse", NULL};
 
 /* for volume keys */
 # include <X11/XF86keysym.h>
@@ -97,12 +101,16 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_z,      spawn,          {.v = bibleLaunch } },
-	{ MODKEY,                       XK_g,      spawn,          {.v = firefox } },
+	{ MODKEY,                       XK_g,      spawn,          {.v = qute } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = screenChange } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = knowledgeSearch } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = fullPdfSearch } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = emailOpen } },
-	{ MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailSync } },
+  { MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailSync } },
+  { MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailNotMuch } },
+  { MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailOpen } },
+	{ MODKEY|ShiftMask,             XK_u,      spawn,          {.v = passMaster } },
+	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = calOpen } },
 	
   { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
