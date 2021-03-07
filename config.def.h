@@ -71,9 +71,9 @@ static const char *qute[] = { "/usr/bin/qutebrowser", NULL};
 static const char *screenChange[] = { "screenChangeTP.sh", NULL};
 static const char *knowledgeSearch[] = { "knowledgeSearch.sh", NULL};
 static const char *fullPdfSearch[] = { "fullPdfSearch.sh", NULL};
-static const char *emailOpen[] = { "st", "neomutt", NULL};
-static const char *emailSync[] = { "st", "mbsync -a", NULL};
-static const char *emailNotMuch[] = { "st", "notmuch new", NULL};
+static const char *emailOpen[] = { "st", "neomutt", "-f", "All_Mail", NULL};
+static const char *emailSync[] = { "st", "mbsync", "-a", NULL};
+static const char *emailNotMuch[] = { "st", "notmuch", "new", NULL};
 static const char *passMaster[] = { "/usr/bin/passmenu", NULL};
 static const char *calOpen[] = { "st", "calcurse", NULL};
 
