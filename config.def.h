@@ -66,12 +66,13 @@ static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%"
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL};
 
 /* Shortcut programs */
-static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/TheBible.pdf", NULL};
+static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/docs/the_bible.pdf", NULL};
 static const char *qute[] = { "/usr/bin/qutebrowser", NULL};
 static const char *screenChange[] = { "screenChangeTP.sh", NULL};
-static const char *knowledgeSearch[] = { "knowledgeSearch.sh", NULL};
+static const char *nota_search[] = { "nota_search.sh", NULL};
 static const char *fullPdfSearch[] = { "fullPdfSearch.sh", NULL};
-static const char *emailOpen[] = { "st", "neomutt", "-f", "All_Mail", NULL};
+/* static const char *emailOpen[] = { "st", "neomutt", "-f", "All_Mail", NULL}; */
+static const char *emailOpen[] = { "st", "neomutt", NULL};
 static const char *emailSync[] = { "st", "mbsync", "-a", NULL};
 static const char *emailNotMuch[] = { "st", "notmuch", "new", NULL};
 static const char *passMaster[] = { "/usr/bin/passmenu", NULL};
@@ -93,7 +94,7 @@ static const char *calOpen[] = { "st", "calcurse", NULL};
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-l", "20", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
@@ -103,7 +104,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_z,      spawn,          {.v = bibleLaunch } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = qute } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = screenChange } },
-	{ MODKEY,                       XK_n,      spawn,          {.v = knowledgeSearch } },
+	{ MODKEY,                       XK_n,      spawn,          {.v = nota_search } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = fullPdfSearch } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = emailOpen } },
   { MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailSync } },
