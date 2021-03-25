@@ -77,7 +77,7 @@ static const char *emailSync[] = { "st", "mbsync", "-a", NULL};
 static const char *emailNotMuch[] = { "st", "notmuch", "new", NULL};
 static const char *passMaster[] = { "/usr/bin/passmenu", NULL};
 static const char *calOpen[] = { "st", "calcurse", NULL};
-
+static const char *spotify_launch[] = { "/home/dan/btb/spotify_launcher.sh", NULL};
 /* for volume keys */
 # include <X11/XF86keysym.h>
 
@@ -112,6 +112,7 @@ static Key keys[] = {
   { MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailOpen } },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          {.v = passMaster } },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = calOpen } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = spotify_launch } },
 	
   { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
