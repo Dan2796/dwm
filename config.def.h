@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 22;       /* vert inner gap between windows */
@@ -17,10 +17,11 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+static const char col_red[]         = "#7A0026"; 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_red, col_red},
 };
 
 /* tagging */
@@ -76,7 +77,7 @@ static const char *emailOpen[] = { "st", "neomutt", NULL};
 static const char *emailSync[] = { "st", "mbsync", "-a", NULL};
 static const char *emailNotMuch[] = { "st", "notmuch", "new", NULL};
 static const char *passMaster[] = { "/usr/bin/passmenu", NULL};
-static const char *calOpen[] = { "st", "calcurse", NULL};
+static const char *calOpen[] = { "st", "/usr/bin/calcurse", NULL};
 static const char *spotify_launch[] = { "/home/dan/btb/spotify_launcher.sh", NULL};
 /* for volume keys */
 # include <X11/XF86keysym.h>
@@ -94,7 +95,8 @@ static const char *spotify_launch[] = { "/home/dan/btb/spotify_launcher.sh", NUL
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-l", "20", NULL };
+/* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-l", "20", NULL }; */
+static const char *dmenucmd[] = { "dmenu_run", "-l", "20", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
