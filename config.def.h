@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 22;       /* vert inner gap between windows */
@@ -58,14 +58,14 @@ static const Layout layouts[] = {
  	{ "[\\]",      dwindle },
 };
 
-/* Kill status */
-static const char *killStatus[] = { "/home/dan/.config/dwmStatusBar.sh", NULL};
+/* Kill volume status */
+static const char *vol_kill[] = { "pkill", "-RTMIN+3", "dwmblocks", NULL};
 
 /* Audio controls */
+
 static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL};
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL};
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL};
-
 /* Shortcut programs */
 static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/docs/the_bible.pdf", NULL};
 static const char *qute[] = { "/usr/bin/qutebrowser", NULL};
@@ -162,11 +162,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
   { 0,                            XF86XK_AudioLowerVolume,     spawn,          {.v = downvol } },
-  { 0,                            XF86XK_AudioLowerVolume,     spawn,          {.v = killStatus } },
+  { 0,                            XF86XK_AudioLowerVolume,     spawn,          {.v = vol_kill } },
   { 0,                            XF86XK_AudioMute,     spawn,          {.v = mutevol } },
-  { 0,                            XF86XK_AudioMute,     spawn,          {.v = killStatus } },
+  { 0,                            XF86XK_AudioMute,     spawn,          {.v = vol_kill } },
   { 0,                            XF86XK_AudioRaiseVolume,     spawn,          {.v = upvol } },
-  { 0,                            XF86XK_AudioRaiseVolume,     spawn,          {.v = killStatus } },
+  { 0,                            XF86XK_AudioRaiseVolume,     spawn,          {.v = vol_kill } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
