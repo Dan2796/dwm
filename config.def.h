@@ -68,7 +68,8 @@ static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%"
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL};
 /* Shortcut programs */
 static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/docs/the_bible.pdf", NULL};
-static const char *qute[] = { "/usr/bin/qutebrowser", NULL};
+/* static const char *qute[] = { "/usr/bin/qutebrowser", NULL}; */
+static const char *firefox[] = { "/usr/bin/firefox", NULL};
 static const char *screenChange[] = { "screenChangeTP.sh", NULL};
 static const char *nota_search[] = { "nota_search.sh", NULL};
 static const char *open_nota[] = { "st", "ranger", "/home/dan/nota", NULL};
@@ -104,7 +105,7 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_z,      spawn,          {.v = bibleLaunch } },
-	{ MODKEY,                       XK_g,      spawn,          {.v = qute } },
+	{ MODKEY,                       XK_g,      spawn,          {.v = firefox } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = screenChange } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = nota_search } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = open_nota } },
