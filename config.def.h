@@ -20,15 +20,31 @@ static const char col_cyan[]        = "#005577";
 static const char col_red[]         = "#7A0026"; 
 static const char col_blue[]        = "#065F7A"; 
 static const char col_orange[]      = "#7A4706"; 
+static const char col_frost_1[]     = "#8fbcbb"; 
+static const char col_frost_2[]     = "#88c0d0"; 
+static const char col_frost_3[]     = "#81a1c1"; 
+static const char col_frost_4[]     = "#5e81ac"; 
+static const char col_aurora_1[]    = "#bf616a"; 
+static const char col_aurora_2[]    = "#d08770"; 
+static const char col_aurora_3[]    = "#ebcb8b"; 
+static const char col_aurora_4[]    = "#a3be8c"; 
+static const char col_aurora_5[]    = "#b48ead"; 
+static const char col_polar_1[]     = "#2e3440"; 
+static const char col_polar_2[]     = "#3b4252"; 
+static const char col_polar_3[]     = "#434c5e"; 
+static const char col_polar_4[]     = "#4c566a"; 
+static const char col_snow_1[]      = "#d8dee9"; 
+static const char col_snow_2[]      = "#e5e9f0"; 
+static const char col_snow_3[]      = "#eceff4"; 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_red, col_red},
-	[SchemeStatus]  = { col_gray4, col_blue, "#000000" }, // Statusbar right, text then background
-	[SchemeTagsSel]  = { col_gray4, col_orange,  "#000000"  }, // Tagbar left selected 
-  [SchemeTagsNorm]  = { col_gray3, col_blue,  "#000000"  }, // Tagbar left unselected 
-  [SchemeInfoSel]  = { col_gray4, col_gray1,  "#000000"  }, // infobar middle selected 
-  [SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  }, // infobar middle unselected 
+	[SchemeNorm] = { col_snow_1, col_polar_1, col_polar_2 },
+	[SchemeSel]  = { col_snow_2, col_aurora_3, col_aurora_3},
+	[SchemeStatus]  = { col_snow_1, col_polar_3,  "#000000" }, // Statusbar right, text then background
+	[SchemeTagsSel]  = { col_polar_1, col_aurora_3,  "#000000"  }, // Tagbar left selected 
+  [SchemeTagsNorm]  = { col_snow_1, col_polar_3,  "#000000"  }, // Tagbar left unselected 
+  [SchemeInfoSel]  = { col_snow_1, col_polar_1,  "#000000"  }, // infobar middle selected 
+  [SchemeInfoNorm]  = { col_snow_1, col_polar_1,  "#000000"  }, // infobar middle unselected 
 };
 
 /* tagging */
