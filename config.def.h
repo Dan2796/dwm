@@ -39,16 +39,16 @@ static const char col_snow_3[]      = "#eceff4";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_snow_1, col_polar_1, col_polar_2 },
-	[SchemeSel]  = { col_snow_2, col_aurora_3, col_aurora_3},
+	[SchemeSel]  = { col_snow_2, col_aurora_5, col_aurora_5},
 	[SchemeStatus]  = { col_snow_1, col_polar_3,  "#000000" }, // Statusbar right, text then background
-	[SchemeTagsSel]  = { col_polar_1, col_aurora_3,  "#000000"  }, // Tagbar left selected 
+	[SchemeTagsSel]  = { col_polar_1, col_aurora_5,  "#000000"  }, // Tagbar left selected 
   [SchemeTagsNorm]  = { col_snow_1, col_polar_3,  "#000000"  }, // Tagbar left unselected 
   [SchemeInfoSel]  = { col_snow_1, col_polar_1,  "#000000"  }, // infobar middle selected 
   [SchemeInfoNorm]  = { col_snow_1, col_polar_1,  "#000000"  }, // infobar middle unselected 
 };
 
 /* tagging */
-static const char *tags[] = { "", "2", "3", "4", "5", "6", "8", "", "" };
+static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "X" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -72,10 +72,10 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
+	{ "T",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
-	{ "|M|",      centeredmaster },
+	{ "M",      monocle },
+	{ "C",      centeredmaster },
 	{ ">M>",      centeredfloatingmaster },
  	{ "[@]",      spiral },
  	{ "[\\]",      dwindle },
