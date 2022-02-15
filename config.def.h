@@ -1,5 +1,9 @@
 /* See LICENSE file for copyright and license details. */
 
+/* Constants */
+#define TERMINAL "st"
+#define TERMCLASS "St"
+
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -94,9 +98,7 @@ static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/docs/the_bible.pdf",
 /* static const char *qute[] = { "/usr/bin/qutebrowser", NULL}; */
 static const char *firefox[] = { "/usr/bin/firefox", NULL};
 static const char *screenChange[] = { "screenChangeTP.sh", NULL};
-static const char *nota_search[] = { "nota_search.sh", NULL};
-static const char *open_nota[] = { "st", "ranger", "/home/dan/nota", NULL};
-/* static const char *emailOpen[] = { "st", "neomutt", "-f", "All_Mail", NULL}; */
+static const char *search_library[] = { "~/btb/search_library.sh", NULL};
 static const char *emailOpen[] = { "st", "neomutt", NULL};
 static const char *emailSync[] = { "st", "mbsync", "-a", NULL};
 static const char *emailNotMuch[] = { "st", "notmuch", "new", NULL};
@@ -130,8 +132,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_z,      spawn,          {.v = bibleLaunch } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = firefox } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = screenChange } },
-	{ MODKEY,                       XK_n,      spawn,          {.v = nota_search } },
-	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = open_nota } },
+	{ MODKEY,                       XK_n,      spawn,          {.v = search_library } },
+  { MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD(TERMINAL " -e nvim ~/dotfiles/vim/vimrc") },
+  { MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD(TERMINAL " -e nvim ~/useful_latex_files/draft_paper.cls") },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = emailOpen } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = emailOpen } },
   { MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailSync } },
   { MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailNotMuch } },
