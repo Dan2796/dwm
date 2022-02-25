@@ -98,9 +98,10 @@ static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/docs/the_bible.pdf",
 /* static const char *qute[] = { "/usr/bin/qutebrowser", NULL}; */
 static const char *firefox[] = { "/usr/bin/firefox", NULL};
 static const char *screenChange[] = { "screenChangeTP.sh", NULL};
-static const char *search_library[] = { "~/btb/search_library.sh", NULL};
+static const char *search_library[] = { "search_library.sh", NULL};
 static const char *emailOpen[] = { "st", "neomutt", NULL};
 static const char *emailSync[] = { "st", "mbsync", "-a", NULL};
+static const char *calendarOpen[] = { "st", "ikhal", NULL};
 static const char *emailNotMuch[] = { "st", "notmuch", "new", NULL};
 static const char *passMaster[] = { "/usr/bin/passmenu", NULL};
 static const char *calOpen[] = { "st", "/usr/bin/calcurse", NULL};
@@ -136,8 +137,8 @@ static Key keys[] = {
   { MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD(TERMINAL " -e nvim ~/dotfiles/vim/vimrc") },
   { MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD(TERMINAL " -e nvim ~/useful_latex_files/draft_paper.cls") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = emailOpen } },
-	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = emailOpen } },
   { MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailSync } },
+  { MODKEY|ShiftMask,             XK_k,      spawn,          {.v = calendarOpen } },
   { MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailNotMuch } },
   { MODKEY|ControlMask,           XK_m,      spawn,          {.v = emailOpen } },
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          {.v = passMaster } },
