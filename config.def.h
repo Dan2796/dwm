@@ -134,6 +134,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_g,      spawn,          {.v = firefox } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = screenChange } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = search_library } },
+  { MODKEY|ControlMask,           XK_l,      spawn,          SHCMD(TERMINAL " -e nvim ~/nextcloud/work_todo.txt") },
   { MODKEY|ShiftMask,             XK_n,      spawn,          SHCMD(TERMINAL " -e nvim ~/dotfiles/vim/vimrc") },
   { MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD(TERMINAL " -e nvim ~/useful_latex_files/draft_paper.cls") },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = emailOpen } },
