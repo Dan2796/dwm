@@ -94,7 +94,7 @@ static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", 
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL};
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL};
 /* Shortcut programs */
-static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/docs/the_bible.pdf", NULL};
+static const char *bibleLaunch[] = { "/usr/bin/zathura", "~/docs/books/the_bible.pdf", NULL};
 /* static const char *qute[] = { "/usr/bin/qutebrowser", NULL}; */
 static const char *firefox[] = { "/usr/bin/firefox", NULL};
 static const char *screenChange[] = { "screenChangeTP.sh", NULL};
