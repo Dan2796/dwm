@@ -86,7 +86,7 @@ static const Layout layouts[] = {
 };
 
 /* Kill volume status */
-static const char *vol_kill[] = { "pkill", "-RTMIN+5", "dwmblocks", NULL};
+static const char *vol_kill[] = { "pkill", "-RTMIN+4", "dwmblocks", NULL};
 
 /* Audio controls */
 
